@@ -33,5 +33,13 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function($scope, feed) {
+    var success = function(data) {
+        console.log(data);
+        $scope.entries = data.responseData.feed.entries;
+    };
+    var error = function(data) {
+        console.log(data);
+    };
+    feed(success, error);
 });

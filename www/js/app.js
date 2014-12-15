@@ -7,7 +7,8 @@
 angular.module('starter', [
     'ionic',
     'starter.controllers',
-    'starter.services'
+    'starter.services',
+    'starter.filters'
 ])
 
 .run(function($ionicPlatform) {

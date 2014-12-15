@@ -6,7 +6,7 @@
     <div class="list card" ng-repeat="entry in entries">
       <div class="item item-avatar">
         <h2>{{ entry.author|authorName }}</h2>
-        <p>{{ entry.publishedDate }}</p>
+        <p>{{ entry.publishedDate|dateFormat }}</p>
       </div>
       <div class="item item-body">
         <h2>{{ entry.title }}</h2>

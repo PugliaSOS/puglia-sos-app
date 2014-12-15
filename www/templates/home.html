@@ -4,14 +4,16 @@
   </ion-nav-buttons>
   <ion-content>
     <div class="list card" ng-repeat="entry in entries">
-      <div class="item item-avatar">
-        <h2>{{ entry.author|authorName }}</h2>
-        <p>{{ entry.publishedDate|dateFormat }}</p>
+      <a ng-href="{{entry.link}}" class="card-link">
+        <div class="item item-avatar">
+          <h2>{{ entry.author|authorName }}</h2>
+          <p>{{ entry.publishedDate|dateFormat }}</p>
+        </div>
+        <div class="item item-body">
+          <h2>{{ entry.title }}</h2>
+          <div ng-bind-html="trust(entry.content)"></div>
+        </div>
       </div>
-      <div class="item item-body">
-        <h2>{{ entry.title }}</h2>
-        <div ng-bind-html="trust(entry.content)"></div>
-      </div>
-    </div>
+    </a>
   </ion-content>
 </ion-view>
